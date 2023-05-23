@@ -26,6 +26,8 @@ char szClassName[] = "Blue Light Setting";
 
 LRESULT CALLBACK WindowProcedure(HWND, UINT, WPARAM, LPARAM);
 
+void readFileConfig(const char *string);
+
 int __stdcall WinMain(HINSTANCE hThisInstance, HINSTANCE hPrevInstance, LPSTR lpszArgument, int nCmdShow) {
     ShowWindow(GetConsoleWindow(), SW_HIDE);
 
@@ -60,10 +62,11 @@ int __stdcall WinMain(HINSTANCE hThisInstance, HINSTANCE hPrevInstance, LPSTR lp
     Shell_NotifyIcon(NIM_ADD, &notifyIconData);
 
     MSG msg;
-    while (GetMessage(&msg, NULL, 0, 0)) {
-        TranslateMessage(&msg);
-        DispatchMessage(&msg);
-    }
+    readFileConfig("saveFileBlue50.txt");
+//    while (GetMessage(&msg, NULL, 0, 0)) {
+//        TranslateMessage(&msg);
+//        DispatchMessage(&msg);
+//    }
 
     return msg.wParam;
 }

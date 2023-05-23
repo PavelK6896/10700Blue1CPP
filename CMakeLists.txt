@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.22)
-project(blue-light-setting)
+project(blue-light-setting-auto-50)
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_EXE_LINKER_FLAGS "-static")
 
-add_executable(blue-light-setting main.cpp)
+add_executable(blue-light-setting-auto-50 main.cpp)
 
